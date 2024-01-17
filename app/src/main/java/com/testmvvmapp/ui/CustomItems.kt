@@ -1,6 +1,8 @@
 package com.testmvvmapp.ui
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.CornerRadius
@@ -9,6 +11,8 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.clipPath
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
@@ -38,4 +42,8 @@ fun FredCardView(
             )
         }
     }
+}
+@Composable
+fun FredText(value: String, style: TextStyle = MaterialTheme.typography.bodyMedium) {
+    Text(value, style = style, color = MaterialTheme.colorScheme.background, overflow = TextOverflow.Ellipsis)
 }
