@@ -25,6 +25,10 @@ Repository отвечает за получение и обработку дан
 
 ### Результаты
 Вывод объявлений из API в дневном режиме.
+
+
+
+
 ![image](https://github.com/FredNekrasov/Test_MVVM_application/assets/152185797/b4cdf2bb-daec-4cf0-9307-a3fb9f7b4119)
 
 
