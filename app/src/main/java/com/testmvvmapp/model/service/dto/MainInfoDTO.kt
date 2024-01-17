@@ -1,5 +1,6 @@
 package com.testmvvmapp.model.service.dto
 
+import com.squareup.moshi.Json
 import com.testmvvmapp.model.service.entities.MainInfo
 
 data class MainInfoDTO(
@@ -9,6 +10,7 @@ data class MainInfoDTO(
     val startDateTimestamp: Long,
     val tags: List<String>,
     val title: String,
+    @field:Json(name ="type")
     val typeDTO: TypeDTO,
     val url: String
 ) {

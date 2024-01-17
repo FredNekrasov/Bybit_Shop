@@ -8,6 +8,7 @@ import com.testmvvmapp.model.service.entities.Result
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -17,7 +18,9 @@ class MainViewModel @Inject constructor(private val repository: IRepository) : V
     val resultSF = resultMSF.asStateFlow()
     fun getData() {
         viewModelScope.launch {
-            resultMSF.emit(repository.getData().value)
+            repository.getData().collectLatest {
+                resultMSF.emit(it)
+            }
         }
     }
 }

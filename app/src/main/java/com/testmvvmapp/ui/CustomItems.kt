@@ -13,7 +13,13 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun FredCardView(modifier: Modifier, cornerRadius: Dp = 10.dp, cutCornerSize: Dp = 30.dp) {
+fun FredCardView(
+    modifier: Modifier,
+    color1: Color,
+    color2: Color,
+    cornerRadius: Dp = 10.dp,
+    cutCornerSize: Dp = 30.dp
+) {
     Canvas(modifier){
         val clipPath = Path().apply {
             lineTo(size.width - cutCornerSize.toPx(), 0f)
@@ -23,9 +29,9 @@ fun FredCardView(modifier: Modifier, cornerRadius: Dp = 10.dp, cutCornerSize: Dp
             close()
         }
         clipPath(clipPath){
-            drawRoundRect(color = Color.Magenta, size = size, cornerRadius = CornerRadius(cornerRadius.toPx()))
+            drawRoundRect(color = color1, size = size, cornerRadius = CornerRadius(cornerRadius.toPx()))
             drawRoundRect(
-                Color.White,
+                color2,
                 Offset(size.width - cutCornerSize.toPx(), -100f),
                 Size(cutCornerSize.toPx() + 100f, cutCornerSize.toPx() + 100f),
                 CornerRadius(cornerRadius.toPx())
