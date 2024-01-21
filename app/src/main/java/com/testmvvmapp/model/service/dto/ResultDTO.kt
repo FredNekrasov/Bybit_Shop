@@ -1,6 +1,6 @@
 package com.testmvvmapp.model.service.dto
 
-import com.testmvvmapp.model.service.entities.Result
+import com.testmvvmapp.model.entities.Result
 
 data class ResultDTO(
     val list: List<MainInfoDTO>,

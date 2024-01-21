@@ -1,4 +1,4 @@
-package com.testmvvmapp.model.service.entities
+package com.testmvvmapp.model.entities
 
 data class MainInfo(
     val dateTimestamp: Long,

@@ -15,31 +15,32 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.testmvvmapp.R
-import com.testmvvmapp.model.internet.ConnectionStatus
+import com.testmvvmapp.model.util.ConnectionStatus
 import com.testmvvmapp.view_model.MainViewModel
 
 @Composable
 fun DataList(viewModel: MainViewModel) {
     val state = viewModel.resultSF.collectAsState().value
+    val tryAgain = stringResource(R.string.tryAgain)
     Box(Modifier.fillMaxSize()) {
         if (state.second != null) {
-            LazyColumn(Modifier.fillMaxSize()){
+            LazyColumn(Modifier.fillMaxSize()) {
                 items(state.second!!.list){ mainInfo ->
-                    Spacer(Modifier.height(16.dp))
                     Item(mainInfo,Modifier.fillMaxWidth())
+                    Spacer(Modifier.height(16.dp))
                 }
             }
         } else {
-            CircularProgressIndicator(Modifier.align(Alignment.Center))
+            if (state.first == ConnectionStatus.LOADING) CircularProgressIndicator(Modifier.align(Alignment.Center))
             Spacer(Modifier.height(16.dp))
             TextButton(
                 { viewModel.getData() },
                 Modifier.align(Alignment.BottomCenter),
                 enabled = when(state.first) {
-                    ConnectionStatus.LOADING -> false
-                    ConnectionStatus.SUCCESS -> false
+                    ConnectionStatus.LOADING, ConnectionStatus.SUCCESS -> false
                     else -> true
                 }
             ) {
@@ -47,11 +48,11 @@ fun DataList(viewModel: MainViewModel) {
                     when(state.first) {
                         ConnectionStatus.LOADING -> stringResource(R.string.LOADING)
                         ConnectionStatus.SUCCESS -> stringResource(R.string.SUCCESS)
-                        ConnectionStatus.NO_DATA -> "${stringResource(R.string.NO_DATA)}\n${stringResource(R.string.tryAgain)}"
-                        ConnectionStatus.CONNECTION_ERROR -> "${stringResource(R.string.CONNECTION_ERROR)}\n${stringResource(R.string.tryAgain)}"
-                        ConnectionStatus.NO_INTERNET -> "${stringResource(R.string.NO_INTERNET)}\n${stringResource(R.string.tryAgain)}"
-                        ConnectionStatus.UNKNOWN -> "${stringResource(R.string.UNKNOWN)}\n${stringResource(R.string.tryAgain)}"
-                    }
+                        ConnectionStatus.NO_DATA -> "${stringResource(R.string.NO_DATA)}\n${tryAgain}"
+                        ConnectionStatus.CONNECTION_ERROR -> "${stringResource(R.string.CONNECTION_ERROR)}\n${tryAgain}"
+                        ConnectionStatus.NO_INTERNET -> "${stringResource(R.string.NO_INTERNET)}\n${tryAgain}"
+                        ConnectionStatus.UNKNOWN -> "${stringResource(R.string.UNKNOWN)}\n${tryAgain}"
+                    }, textAlign = TextAlign.Center
                 )
             }
         }

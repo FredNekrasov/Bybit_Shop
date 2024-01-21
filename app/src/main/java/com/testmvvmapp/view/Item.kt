@@ -14,7 +14,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.testmvvmapp.model.service.entities.MainInfo
+import com.testmvvmapp.model.entities.MainInfo
 import com.testmvvmapp.ui.FredCardView
 import com.testmvvmapp.ui.FredText
 
@@ -22,10 +22,7 @@ import com.testmvvmapp.ui.FredText
 fun Item(data: MainInfo, modifier: Modifier = Modifier) {
     Box(modifier) {
         FredCardView(Modifier.matchParentSize(), MaterialTheme.colorScheme.onBackground, MaterialTheme.colorScheme.background)
-        Column(
-            Modifier
-                .fillMaxSize()
-                .padding(16.dp)) {
+        Column(Modifier.fillMaxSize().padding(16.dp)) {
             FredText(data.title, MaterialTheme.typography.titleMedium)
             Spacer(modifier = Modifier.height(8.dp))
             FredText(data.description)
