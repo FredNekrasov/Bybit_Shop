@@ -20,7 +20,7 @@ class Repository(private val api: IService) : IRepository {
                 val result = api.get().execute()
                 if (result.isSuccessful) {
                     val body = result.body() ?: return@launch stateFlow.emit(Pair(ConnectionStatus.NO_DATA, null))
-                    stateFlow.emit(Pair(ConnectionStatus.SUCCESS, body.resultDTO.toResult()))
+                    stateFlow.emit(Pair(ConnectionStatus.SUCCESS, body.result.toResult()))
                 }
             } catch (e: IOException) {
                 stateFlow.emit(Pair(ConnectionStatus.CONNECTION_ERROR, null))
