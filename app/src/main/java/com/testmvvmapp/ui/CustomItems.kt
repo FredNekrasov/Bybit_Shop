@@ -45,5 +45,5 @@ fun FredCardView(
 }
 @Composable
 fun FredText(value: String, style: TextStyle = MaterialTheme.typography.bodyMedium) {
-    Text(value, style = style, color = MaterialTheme.colorScheme.background, overflow = TextOverflow.Ellipsis)
+    Text(value, style = style, color = MaterialTheme.colorScheme.onErrorContainer, overflow = TextOverflow.Ellipsis)
 }

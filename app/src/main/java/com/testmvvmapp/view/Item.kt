@@ -21,7 +21,7 @@ import com.testmvvmapp.ui.FredText
 @Composable
 fun Item(data: MainInfo, modifier: Modifier = Modifier) {
     Box(modifier) {
-        FredCardView(Modifier.matchParentSize(), MaterialTheme.colorScheme.onBackground, MaterialTheme.colorScheme.background)
+        FredCardView(Modifier.matchParentSize(), MaterialTheme.colorScheme.errorContainer, MaterialTheme.colorScheme.onErrorContainer)
         Column(Modifier.fillMaxSize().padding(16.dp)) {
             FredText(data.title, MaterialTheme.typography.titleMedium)
             Spacer(modifier = Modifier.height(8.dp))
