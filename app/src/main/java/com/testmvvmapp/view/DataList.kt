@@ -18,7 +18,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.testmvvmapp.R
-import com.testmvvmapp.model.util.ConnectionStatus
+import com.testmvvmapp.model.service.util.ConnectionStatus
 import com.testmvvmapp.view_model.MainViewModel
 
 @Composable

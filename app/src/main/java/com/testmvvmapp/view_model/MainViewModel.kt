@@ -2,7 +2,7 @@ package com.testmvvmapp.view_model
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.testmvvmapp.model.util.ConnectionStatus
+import com.testmvvmapp.model.service.util.ConnectionStatus
 import com.testmvvmapp.model.repository.IRepository
 import com.testmvvmapp.model.entities.Result
 import dagger.hilt.android.lifecycle.HiltViewModel
