@@ -8,5 +8,6 @@ data class MainInfo(
     val tags: List<String>,
     val title: String,
     val type: Type,
-    val url: String
+    val url: String,
+    var favorite: Boolean = false
 )
