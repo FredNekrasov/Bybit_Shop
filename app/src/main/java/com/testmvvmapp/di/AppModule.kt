@@ -27,4 +27,7 @@ object AppModule {
     @Provides
     @Singleton
     fun provideRepository(service: IService): IRepository = Repository(service)
+    @Provides
+    @Singleton
+    fun provideUserRepository(mainDB: MainDB): UserRepository = UserRepositoryImpl(mainDB.userDao)
 }
