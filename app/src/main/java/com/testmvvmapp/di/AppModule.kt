@@ -6,8 +6,8 @@ import com.google.gson.Gson
 import com.testmvvmapp.model.local.MainDB
 import com.testmvvmapp.model.repository.*
 import com.testmvvmapp.model.service.IService
-import com.testmvvmapp.model.type_converters.ResultConverter
-import com.testmvvmapp.model.type_converters.parser.GsonParser
+import com.testmvvmapp.model.local.type_converters.ResultConverter
+import com.testmvvmapp.model.local.type_converters.parser.GsonParser
 import dagger.*
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent

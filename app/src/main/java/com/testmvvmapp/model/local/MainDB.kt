@@ -3,7 +3,7 @@ package com.testmvvmapp.model.local
 import androidx.room.*
 import com.testmvvmapp.model.entities.User
 import com.testmvvmapp.model.local.dao.*
-import com.testmvvmapp.model.type_converters.ResultConverter
+import com.testmvvmapp.model.local.type_converters.ResultConverter
 import javax.inject.Singleton
 
 @Singleton
