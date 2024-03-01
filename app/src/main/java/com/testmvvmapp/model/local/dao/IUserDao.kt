@@ -8,6 +8,4 @@ interface IUserDao {
     fun insert(user: User)
     @Query("SELECT * FROM user")
     fun getAll(): List<User>
-    @Delete
-    fun delete(user: User)
 }
