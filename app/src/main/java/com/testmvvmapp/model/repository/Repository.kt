@@ -1,35 +1,30 @@
 package com.testmvvmapp.model.repository
 
-import com.testmvvmapp.model.service.util.ConnectionStatus
+import com.testmvvmapp.model.entities.MainInfo
 import com.testmvvmapp.model.service.IService
-import com.testmvvmapp.model.entities.Result
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
+import com.testmvvmapp.model.service.util.ConnectionStatus
+import kotlinx.coroutines.flow.*
 import retrofit2.HttpException
 import java.io.IOException
 
 class Repository(private val api: IService) : IRepository {
-    private val scope = CoroutineScope(Dispatchers.IO)
-    override fun getData(): StateFlow<Pair<ConnectionStatus, Result?>> {
-        val stateFlow = MutableStateFlow<Pair<ConnectionStatus, Result?>>(Pair(ConnectionStatus.LOADING,null))
-        scope.launch {
-            try {
-                val result = api.get().execute()
-                if (result.isSuccessful) {
-                    val body = result.body() ?: return@launch stateFlow.emit(Pair(ConnectionStatus.NO_DATA,null))
-                    stateFlow.emit(Pair(ConnectionStatus.SUCCESS,body.result.toResult()))
-                }
-            } catch (e: IOException) {
-                stateFlow.emit(Pair(ConnectionStatus.CONNECTION_ERROR,null))
-            } catch (e: HttpException) {
-                stateFlow.emit(Pair(ConnectionStatus.NO_INTERNET,null))
-            } catch (e: Exception) {
-                stateFlow.emit(Pair(ConnectionStatus.UNKNOWN,null))
+    override suspend fun getData(): StateFlow<Pair<ConnectionStatus,List<MainInfo>>> {
+        val list = emptyList<MainInfo>()
+        val data = MutableStateFlow(Pair(ConnectionStatus.LOADING,list))
+        try {
+            val res = api.get()
+            if(res == null) data.emit(Pair(ConnectionStatus.NO_DATA,list))
+            else {
+                val entityList = res.result.list.map { it.toMainInfo() }
+                data.emit(Pair(ConnectionStatus.SUCCESS,entityList))
             }
+        } catch (e: IOException) {
+            data.emit(Pair(ConnectionStatus.CONNECTION_ERROR,list))
+        } catch (e: HttpException) {
+            data.emit(Pair(ConnectionStatus.NO_INTERNET,list))
+        } catch (e: Exception) {
+            data.emit(Pair(ConnectionStatus.UNKNOWN,list))
         }
-        return stateFlow
+        return data
     }
 }
