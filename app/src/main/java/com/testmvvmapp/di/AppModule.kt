@@ -1,14 +1,18 @@
 package com.testmvvmapp.di
 
-import com.testmvvmapp.model.repository.IRepository
-import com.testmvvmapp.model.repository.Repository
+import android.app.Application
+import androidx.room.Room
+import com.google.gson.Gson
+import com.testmvvmapp.model.local.MainDB
+import com.testmvvmapp.model.repository.*
 import com.testmvvmapp.model.service.IService
-import dagger.Module
-import dagger.Provides
+import com.testmvvmapp.model.type_converters.ResultConverter
+import com.testmvvmapp.model.type_converters.parser.GsonParser
+import dagger.*
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
@@ -16,8 +20,12 @@ import javax.inject.Singleton
 object AppModule {
     @Provides
     @Singleton
+    fun provideMainDB(app: Application) = Room.databaseBuilder(app,MainDB::class.java,MainDB.DB_NAME)
+        .allowMainThreadQueries().addTypeConverter(ResultConverter(GsonParser(Gson()))).build()
+    @Provides
+    @Singleton
     fun provideService(): IService = Retrofit.Builder().baseUrl(IService.BASE_URL)
-        .addConverterFactory(MoshiConverterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create())
         .build().create(IService::class.java)
     @Provides
     @Singleton
