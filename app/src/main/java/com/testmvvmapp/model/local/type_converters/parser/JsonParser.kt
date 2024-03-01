@@ -1,4 +1,4 @@
-package com.testmvvmapp.model.type_converters.parser
+package com.testmvvmapp.model.local.type_converters.parser
 
 import java.lang.reflect.Type
 
