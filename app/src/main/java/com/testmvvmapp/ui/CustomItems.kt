@@ -18,7 +18,7 @@ fun FredCardView(
     color1: Color,
     color2: Color,
     cornerRadius: Dp = 10.dp,
-    cutCornerSize: Dp = 30.dp
+    cutCornerSize: Dp = 0.dp
 ) {
     Canvas(modifier){
         val clipPath = Path().apply {
