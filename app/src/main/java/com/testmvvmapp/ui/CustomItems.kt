@@ -1,6 +1,6 @@
 package com.testmvvmapp.ui
 
-import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.*
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -71,4 +71,21 @@ fun FredTextField(value: String, onChangeNumber: (String) -> Unit, id: String, m
 @Composable
 fun FredButton(click: () -> Unit, inf: String, modifier: Modifier = Modifier) {
     Button(click, modifier) { Text(inf, fontFamily = FontFamily.Serif) }
+}
+
+@Composable
+fun FredCheckbox(value: Boolean, onCheckedChange: (Boolean) -> Unit) {
+    Checkbox(
+        value,
+        onCheckedChange,
+        Modifier.border(2.dp,MaterialTheme.colorScheme.onErrorContainer,MaterialTheme.shapes.extraSmall),
+        colors = CheckboxDefaults.colors(
+            checkedColor = MaterialTheme.colorScheme.error,
+            uncheckedColor = MaterialTheme.colorScheme.onError,
+            checkmarkColor = MaterialTheme.colorScheme.inversePrimary,
+            disabledCheckedColor = MaterialTheme.colorScheme.primaryContainer,
+            disabledUncheckedColor = MaterialTheme.colorScheme.onPrimaryContainer,
+            disabledIndeterminateColor = MaterialTheme.colorScheme.outline
+        )
+    )
 }
