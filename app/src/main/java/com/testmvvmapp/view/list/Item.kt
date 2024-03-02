@@ -1,22 +1,13 @@
-package com.testmvvmapp.view
+package com.testmvvmapp.view.list
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.*
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.testmvvmapp.model.entities.MainInfo
-import com.testmvvmapp.ui.FredCardView
-import com.testmvvmapp.ui.FredText
+import com.testmvvmapp.ui.*
 
 @Composable
 fun Item(data: MainInfo, modifier: Modifier = Modifier) {
@@ -36,6 +27,7 @@ fun Item(data: MainInfo, modifier: Modifier = Modifier) {
                 }
             }
             FredText(data.url, MaterialTheme.typography.bodySmall)
+            FredCheckbox(data.favorite) { data.favorite = it }
         }
     }
 }
