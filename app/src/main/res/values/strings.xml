@@ -26,4 +26,14 @@
     <string name="profile">Profile</string>
     <string name="name">Name</string>
     <string name="surname">Surname</string>
+    <string name="userName">userName</string>
+    <string name="password">password</string>
+    <string name="email">email</string>
+
+    <string name="shop">Shop</string>
+    <string name="favourites">Favourites</string>
+
+    <string name="incorrectUserName">you entered the wrong userName</string>
+    <string name="incorrectPassword">you entered the wrong password</string>
+    <string name="incorrectEmail">you entered the wrong email</string>
 </resources>
