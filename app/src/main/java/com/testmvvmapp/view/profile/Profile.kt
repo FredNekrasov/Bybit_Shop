@@ -1,7 +1,6 @@
 package com.testmvvmapp.view.profile
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
 import androidx.compose.ui.res.stringResource
@@ -15,7 +14,7 @@ import com.testmvvmapp.view_model.UserVM
 fun Profile(controller: NavHostController,userVM: UserVM) {
     val user = userVM.resultSF.collectAsState().value.second
     Column(Modifier.fillMaxSize(),Arrangement.Top,Alignment.CenterHorizontally) {
-        Text(stringResource(string.profile),style = MaterialTheme.typography.titleLarge,color = MaterialTheme.colorScheme.tertiaryContainer)
+        FredTextHeader(stringResource(string.profile))
         Spacer(Modifier.height(16.dp))
         UserInfo(user, Modifier.fillMaxWidth())
         Spacer(Modifier.height(16.dp))

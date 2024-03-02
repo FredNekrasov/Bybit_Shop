@@ -15,7 +15,7 @@ fun UserInfo(user: User?,modifier: Modifier) {
     if (user != null) {
         Box(modifier) {
             FredCardView(Modifier.matchParentSize(),MaterialTheme.colorScheme.tertiaryContainer,MaterialTheme.colorScheme.onTertiaryContainer)
-            Column(Modifier.fillMaxSize().padding(16.dp).padding(end = 32.dp)) {
+            Column(modifier.padding(16.dp)) {
                 Text("${stringResource(string.userName)}: ${user.userName}", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onTertiaryContainer)
                 Spacer(Modifier.height(8.dp))
                 Text("${stringResource(string.password)}: ${user.password}", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onTertiaryContainer)
