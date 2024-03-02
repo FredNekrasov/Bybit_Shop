@@ -1,7 +1,6 @@
 package com.testmvvmapp.ui
 
 import androidx.compose.foundation.*
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -10,7 +9,6 @@ import androidx.compose.ui.graphics.*
 import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.*
 
@@ -42,20 +40,19 @@ fun FredCardView(
     }
 }
 @Composable
-fun FredText(value: String, style: TextStyle = MaterialTheme.typography.bodyMedium) {
-    Text(value, style = style, color = MaterialTheme.colorScheme.onErrorContainer, overflow = TextOverflow.Ellipsis)
+fun FredTextHeader(value: String, style: TextStyle = MaterialTheme.typography.displayMedium) {
+    Text(
+        value,
+        fontSize = MaterialTheme.typography.displayMedium.fontSize,
+        fontFamily = FontFamily.SansSerif,
+        style = style,
+        color = MaterialTheme.colorScheme.onErrorContainer,
+        overflow = TextOverflow.Ellipsis
+    )
 }
 @Composable
-fun FredOTF(value: String,onChangeNumber: (String) -> Unit,id: String,keyboardType: KeyboardType,modifier: Modifier = Modifier) {
-    OutlinedTextField(
-        value = value,
-        onValueChange = onChangeNumber,
-        modifier,
-        label = { Text(id, fontFamily = FontFamily.Serif) },
-        keyboardOptions = KeyboardOptions(keyboardType = keyboardType),
-        shape = MaterialTheme.shapes.medium,
-        colors = OutlinedTextFieldDefaults.colors()
-    )
+fun FredText(value: String, style: TextStyle = MaterialTheme.typography.bodyMedium) {
+    Text(value, style = style, color = MaterialTheme.colorScheme.onErrorContainer, overflow = TextOverflow.Ellipsis)
 }
 @Composable
 fun FredTextField(value: String, onChangeNumber: (String) -> Unit, id: String, modifier: Modifier = Modifier) {
@@ -72,7 +69,6 @@ fun FredTextField(value: String, onChangeNumber: (String) -> Unit, id: String, m
 fun FredButton(click: () -> Unit, inf: String, modifier: Modifier = Modifier) {
     Button(click, modifier) { Text(inf, fontFamily = FontFamily.Serif) }
 }
-
 @Composable
 fun FredCheckbox(value: Boolean, onCheckedChange: (Boolean) -> Unit) {
     Checkbox(
