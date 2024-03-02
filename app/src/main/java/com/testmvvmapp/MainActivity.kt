@@ -32,24 +32,24 @@ class MainActivity : ComponentActivity() {
         setContent {
             TestMVVMAppTheme {
                 Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    val navController = rememberNavController()
+                    val controller = rememberNavController()
                     Scaffold { padding ->
                         Column(Modifier.fillMaxSize().padding(padding)) {
-                            NavHost(navController,ScreenRoutes.Authorization.route){
+                            NavHost(controller,ScreenRoutes.Authorization.route){
                                 composable(ScreenRoutes.Authorization.route){
-                                    Authorization(navController, userVM)
+                                    Authorization(controller,userVM)
                                 }
                                 composable(ScreenRoutes.Registration.route){
-                                    Registration(navController, userVM)
+                                    Registration(controller,userVM)
                                 }
                                 composable(ScreenRoutes.Profile.route){
-                                    Profile(navController, userVM)
+                                    Profile(controller,userVM)
                                 }
                                 composable(ScreenRoutes.DataList.route){
-                                    DataList(viewModel)
+                                    DataList(controller,viewModel)
                                 }
                                 composable(ScreenRoutes.Favorites.route){
-                                    FavouriteList(viewModel)
+                                    FavouriteList(controller,viewModel)
                                 }
                             }
                         }
