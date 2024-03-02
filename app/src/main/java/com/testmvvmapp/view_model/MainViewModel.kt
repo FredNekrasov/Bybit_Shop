@@ -18,7 +18,6 @@ class MainViewModel @Inject constructor(private val repository: IRepository) : V
     }
     fun getData() {
         viewModelScope.launch {
-            delay(2000)
             repository.getData().collectLatest {
                 resultMSF.emit(it)
             }
