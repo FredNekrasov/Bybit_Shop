@@ -15,24 +15,22 @@ import com.testmvvmapp.view_model.MainViewModel
 fun FavouriteList(controller: NavHostController,viewModel: MainViewModel) {
     val state = viewModel.resultSF.collectAsState().value
     Box(Modifier.fillMaxSize()) {
-        LazyColumn(Modifier.fillMaxSize()) {
-            item {
-                Row(Modifier.fillMaxWidth(),Arrangement.Center,Alignment.CenterVertically) {
-                    FredTextHeader(stringResource(R.string.favourites))
+        Column(Modifier.fillMaxSize(),Arrangement.Center,Alignment.CenterHorizontally) {
+            FredTextHeader(stringResource(R.string.favourites))
+            Spacer(Modifier.height(16.dp))
+            LazyColumn(Modifier.fillMaxSize()) {
+                items(state.second) { mainInfo ->
+                    if(mainInfo.favorite) {
+                        Item(mainInfo,Modifier.fillMaxWidth())
+                        Spacer(Modifier.height(8.dp))
+                    }
                 }
-                Spacer(Modifier.height(32.dp))
-            }
-            items(state.second) { mainInfo ->
-                if(mainInfo.favorite) {
-                    Item(mainInfo,Modifier.fillMaxWidth())
+                item {
+                    Row(Modifier.fillMaxWidth(),Arrangement.Center,Alignment.CenterVertically) {
+                        FredButton({ controller.navigateUp() },stringResource(R.string.goBack))
+                    }
                     Spacer(Modifier.height(16.dp))
                 }
-            }
-            item {
-                Row(Modifier.fillMaxWidth(),Arrangement.Center,Alignment.CenterVertically) {
-                    FredButton({ controller.navigateUp() },stringResource(R.string.goBack))
-                }
-                Spacer(Modifier.height(16.dp))
             }
         }
     }

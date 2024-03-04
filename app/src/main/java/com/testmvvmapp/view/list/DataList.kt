@@ -19,24 +19,22 @@ fun DataList(controller: NavHostController,viewModel: MainViewModel) {
     val state = viewModel.resultSF.collectAsState().value
     Box(Modifier.fillMaxSize()) {
         if (state.first == ConnectionStatus.LOADING) CircularProgressIndicator(Modifier.align(Alignment.Center))
-        LazyColumn(Modifier.fillMaxSize()) {
-            item {
-                Row(Modifier.fillMaxWidth(),Arrangement.Center,Alignment.CenterVertically) {
-                    FredTextHeader(stringResource(string.shop))
+        Column(Modifier.fillMaxSize(),Arrangement.Center,Alignment.CenterHorizontally) {
+            FredTextHeader(stringResource(string.shop))
+            Spacer(Modifier.height(16.dp))
+            LazyColumn(Modifier.fillMaxSize()) {
+                items(state.second) { mainInfo ->
+                    Item(mainInfo,Modifier.fillMaxWidth())
+                    Spacer(Modifier.height(8.dp))
                 }
-                Spacer(Modifier.height(32.dp))
-            }
-            items(state.second){ mainInfo ->
-                Item(mainInfo,Modifier.fillMaxWidth())
-                Spacer(Modifier.height(16.dp))
-            }
-            item {
-                Row(Modifier.fillMaxWidth(),Arrangement.SpaceAround,Alignment.CenterVertically) {
-                    FredButton({ controller.navigateUp() },stringResource(string.goBack))
-                    this@Box.ShowInternetInfo ({ viewModel.getData() }, state.first)
-                    FredButton({ controller.navigate(ScreenRoutes.Favorites.route) },stringResource(string.favourites))
+                item {
+                    Row(Modifier.fillMaxWidth(),Arrangement.SpaceAround,Alignment.CenterVertically) {
+                        FredButton({ controller.navigateUp() },stringResource(string.goBack))
+                        this@Box.ShowInternetInfo({ viewModel.getData() },state.first)
+                        FredButton({ controller.navigate(ScreenRoutes.Favorites.route) }, stringResource(string.favourites))
+                    }
+                    Spacer(Modifier.height(16.dp))
                 }
-                Spacer(Modifier.height(16.dp))
             }
         }
     }

@@ -3,7 +3,7 @@ package com.testmvvmapp.view.list
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.*
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.testmvvmapp.model.entities.MainInfo
@@ -11,6 +11,7 @@ import com.testmvvmapp.ui.*
 
 @Composable
 fun Item(data: MainInfo, modifier: Modifier = Modifier) {
+    var isFavorite by remember { mutableStateOf(data.favorite) }
     Box(modifier) {
         FredCardView(Modifier.matchParentSize(), MaterialTheme.colorScheme.errorContainer, MaterialTheme.colorScheme.onErrorContainer)
         Column(Modifier.fillMaxSize().padding(16.dp)) {
@@ -27,7 +28,10 @@ fun Item(data: MainInfo, modifier: Modifier = Modifier) {
                 }
             }
             FredText(data.url, MaterialTheme.typography.bodySmall)
-            FredCheckbox(data.favorite) { data.favorite = it }
+            FredCheckbox(isFavorite) {
+                isFavorite = it
+                data.favorite = it
+            }
         }
     }
 }
