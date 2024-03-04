@@ -36,21 +36,11 @@ class MainActivity : ComponentActivity() {
                     Scaffold { padding ->
                         Column(Modifier.fillMaxSize().padding(padding)) {
                             NavHost(controller,ScreenRoutes.Authorization.route){
-                                composable(ScreenRoutes.Authorization.route){
-                                    Authorization(controller,userVM)
-                                }
-                                composable(ScreenRoutes.Registration.route){
-                                    Registration(controller,userVM)
-                                }
-                                composable(ScreenRoutes.Profile.route){
-                                    Profile(controller,userVM)
-                                }
-                                composable(ScreenRoutes.DataList.route){
-                                    DataList(controller,viewModel)
-                                }
-                                composable(ScreenRoutes.Favorites.route){
-                                    FavouriteList(controller,viewModel)
-                                }
+                                composable(ScreenRoutes.Authorization.route){ Authorization(controller,userVM) }
+                                composable(ScreenRoutes.Registration.route){ Registration(controller,userVM) }
+                                composable(ScreenRoutes.Profile.route){ Profile(controller,userVM) }
+                                composable(ScreenRoutes.DataList.route){ DataList(controller,viewModel) }
+                                composable(ScreenRoutes.Favorites.route) { FavouriteList(controller,viewModel) }
                             }
                         }
                     }
