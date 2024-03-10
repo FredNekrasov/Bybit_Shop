@@ -24,7 +24,11 @@ fun DataList(controller: NavHostController,viewModel: MainViewModel) {
             Spacer(Modifier.height(16.dp))
             LazyColumn(Modifier.fillMaxSize()) {
                 items(state.second) { mainInfo ->
-                    Item(mainInfo,Modifier.fillMaxWidth())
+                    var isFavorite by remember { mutableStateOf(mainInfo.favorite) }
+                    Item(mainInfo,isFavorite,{
+                        isFavorite = it
+                        mainInfo.favorite = it
+                    },Modifier.fillMaxWidth())
                     Spacer(Modifier.height(8.dp))
                 }
                 item {

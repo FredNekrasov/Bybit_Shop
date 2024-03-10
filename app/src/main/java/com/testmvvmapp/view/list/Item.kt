@@ -10,8 +10,7 @@ import com.testmvvmapp.model.entities.MainInfo
 import com.testmvvmapp.ui.*
 
 @Composable
-fun Item(data: MainInfo, modifier: Modifier = Modifier) {
-    var isFavorite by remember { mutableStateOf(data.favorite) }
+fun Item(data: MainInfo, isFavorite: Boolean, onFavouriteChange: (Boolean) -> Unit, modifier: Modifier = Modifier) {
     Box(modifier) {
         FredCardView(Modifier.matchParentSize(), MaterialTheme.colorScheme.errorContainer, MaterialTheme.colorScheme.onErrorContainer)
         Column(Modifier.fillMaxSize().padding(16.dp)) {
@@ -28,10 +27,7 @@ fun Item(data: MainInfo, modifier: Modifier = Modifier) {
                 }
             }
             FredText(data.url, MaterialTheme.typography.bodySmall)
-            FredCheckbox(isFavorite) {
-                isFavorite = it
-                data.favorite = it
-            }
+            FredCheckbox(isFavorite, onFavouriteChange)
         }
     }
 }

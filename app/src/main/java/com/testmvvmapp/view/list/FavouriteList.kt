@@ -21,7 +21,11 @@ fun FavouriteList(controller: NavHostController,viewModel: MainViewModel) {
             LazyColumn(Modifier.fillMaxSize()) {
                 items(state.second) { mainInfo ->
                     if(mainInfo.favorite) {
-                        Item(mainInfo,Modifier.fillMaxWidth())
+                        var isFavorite by remember { mutableStateOf(mainInfo.favorite) }
+                        Item(mainInfo,isFavorite,{
+                            isFavorite = it
+                            mainInfo.favorite = it
+                        },Modifier.fillMaxWidth())
                         Spacer(Modifier.height(8.dp))
                     }
                 }
