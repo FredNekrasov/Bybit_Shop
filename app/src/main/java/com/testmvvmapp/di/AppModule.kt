@@ -4,8 +4,8 @@ import androidx.room.Room
 import com.testmvvmapp.model.local.MainDB
 import com.testmvvmapp.model.repository.*
 import com.testmvvmapp.model.service.IBybitService
-import com.testmvvmapp.view_model.BybitVM
-import com.testmvvmapp.view_model.UserVM
+import com.testmvvmapp.viewModels.BybitVM
+import com.testmvvmapp.viewModels.UserVM
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit

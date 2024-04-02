@@ -14,7 +14,7 @@ import androidx.navigation.NavHostController
 import com.testmvvmapp.R.string
 import com.testmvvmapp.model.entities.User
 import com.testmvvmapp.ui.*
-import com.testmvvmapp.view_model.UserVM
+import com.testmvvmapp.viewModels.UserVM
 
 @Composable
 fun Registration(controller: NavHostController, userVM: UserVM) {

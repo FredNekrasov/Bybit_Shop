@@ -9,7 +9,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.testmvvmapp.R
 import com.testmvvmapp.ui.*
-import com.testmvvmapp.view_model.BybitVM
+import com.testmvvmapp.viewModels.BybitVM
 
 @Composable
 fun FavouriteList(controller: NavHostController, bybitVM: BybitVM) {

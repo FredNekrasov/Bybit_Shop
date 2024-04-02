@@ -1,4 +1,4 @@
-package com.testmvvmapp.view_model
+package com.testmvvmapp.viewModels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

@@ -12,7 +12,7 @@ import androidx.navigation.NavHostController
 import com.testmvvmapp.R.string
 import com.testmvvmapp.model.service.util.ConnectionStatus
 import com.testmvvmapp.ui.*
-import com.testmvvmapp.view_model.BybitVM
+import com.testmvvmapp.viewModels.BybitVM
 
 @Composable
 fun DataList(controller : NavHostController, bybitVM : BybitVM) {

@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.testmvvmapp.R
 import com.testmvvmapp.ui.*
-import com.testmvvmapp.view_model.UserVM
+import com.testmvvmapp.viewModels.UserVM
 
 @Composable
 fun Authorization(controller: NavController, userVM: UserVM) {

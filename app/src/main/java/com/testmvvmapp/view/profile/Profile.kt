@@ -8,7 +8,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.testmvvmapp.R.string
 import com.testmvvmapp.ui.*
-import com.testmvvmapp.view_model.UserVM
+import com.testmvvmapp.viewModels.UserVM
 
 @Composable
 fun Profile(controller: NavHostController, userVM: UserVM) {

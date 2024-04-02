@@ -15,8 +15,8 @@ import com.testmvvmapp.view.Registration
 import com.testmvvmapp.view.list.DataList
 import com.testmvvmapp.view.list.FavouriteList
 import com.testmvvmapp.view.profile.Profile
-import com.testmvvmapp.view_model.BybitVM
-import com.testmvvmapp.view_model.UserVM
+import com.testmvvmapp.viewModels.BybitVM
+import com.testmvvmapp.viewModels.UserVM
 
 class MainActivity : ComponentActivity() {
     private val bybitVM: BybitVM by viewModels()
