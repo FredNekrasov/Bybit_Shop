@@ -1,6 +1,6 @@
-package com.testmvvmapp.model.service
+package com.testmvvmapp.bybit.data.remote
 
-import com.testmvvmapp.model.service.dto.ByBitDTO
+import com.testmvvmapp.bybit.data.remote.dto.ByBitDTO
 import retrofit2.http.GET
 
 interface IBybitService {

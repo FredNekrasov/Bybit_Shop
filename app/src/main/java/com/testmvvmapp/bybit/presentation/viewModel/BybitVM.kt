@@ -1,10 +1,10 @@
-package com.testmvvmapp.viewModels
+package com.testmvvmapp.bybit.presentation.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.testmvvmapp.model.entities.MainInfo
-import com.testmvvmapp.model.repository.IBybitRepository
-import com.testmvvmapp.model.service.util.ConnectionStatus
+import com.testmvvmapp.bybit.data.models.MainInfo
+import com.testmvvmapp.bybit.data.repositories.IBybitRepository
+import com.testmvvmapp.bybit.data.remote.util.ConnectionStatus
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 

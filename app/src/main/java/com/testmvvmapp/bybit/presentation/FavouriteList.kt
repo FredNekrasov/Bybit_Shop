@@ -1,4 +1,4 @@
-package com.testmvvmapp.view.list
+package com.testmvvmapp.bybit.presentation
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.*
@@ -9,7 +9,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.testmvvmapp.R
 import com.testmvvmapp.ui.*
-import com.testmvvmapp.viewModels.BybitVM
+import com.testmvvmapp.bybit.presentation.viewModel.BybitVM
 
 @Composable
 fun FavouriteList(controller: NavHostController, bybitVM: BybitVM) {

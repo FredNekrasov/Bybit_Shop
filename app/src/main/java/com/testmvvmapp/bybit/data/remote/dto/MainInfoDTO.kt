@@ -1,6 +1,6 @@
-package com.testmvvmapp.model.service.dto
+package com.testmvvmapp.bybit.data.remote.dto
 
-import com.testmvvmapp.model.entities.MainInfo
+import com.testmvvmapp.bybit.data.models.MainInfo
 
 data class MainInfoDTO(
     val dateTimestamp: Long,

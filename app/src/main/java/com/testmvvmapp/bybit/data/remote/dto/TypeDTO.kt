@@ -1,6 +1,6 @@
-package com.testmvvmapp.model.service.dto
+package com.testmvvmapp.bybit.data.remote.dto
 
-import com.testmvvmapp.model.entities.Type
+import com.testmvvmapp.bybit.data.models.Type
 
 data class TypeDTO(
     val key: String,

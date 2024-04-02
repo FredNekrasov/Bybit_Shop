@@ -2,11 +2,12 @@ package com.testmvvmapp.di
 
 import androidx.room.Room
 import com.testmvvmapp.user.data.local.MainDB
-import com.testmvvmapp.model.repository.*
-import com.testmvvmapp.model.service.IBybitService
+import com.testmvvmapp.bybit.data.remote.IBybitService
+import com.testmvvmapp.bybit.data.repositories.BybitRepository
+import com.testmvvmapp.bybit.data.repositories.IBybitRepository
 import com.testmvvmapp.user.data.repositories.UserRepository
 import com.testmvvmapp.user.data.repositories.UserRepositoryImpl
-import com.testmvvmapp.viewModels.BybitVM
+import com.testmvvmapp.bybit.presentation.viewModel.BybitVM
 import com.testmvvmapp.user.presentation.viewModel.UserVM
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module

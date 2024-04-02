@@ -1,4 +1,4 @@
-package com.testmvvmapp.view.list
+package com.testmvvmapp.bybit.presentation
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.*
@@ -6,7 +6,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.testmvvmapp.model.entities.MainInfo
+import com.testmvvmapp.bybit.data.models.MainInfo
 import com.testmvvmapp.ui.*
 
 @Composable

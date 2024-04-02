@@ -1,4 +1,4 @@
-package com.testmvvmapp.view.list
+package com.testmvvmapp.bybit.presentation
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.*
@@ -10,9 +10,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.testmvvmapp.R.string
-import com.testmvvmapp.model.service.util.ConnectionStatus
+import com.testmvvmapp.bybit.data.remote.util.ConnectionStatus
 import com.testmvvmapp.ui.*
-import com.testmvvmapp.viewModels.BybitVM
+import com.testmvvmapp.bybit.presentation.viewModel.BybitVM
 
 @Composable
 fun DataList(controller : NavHostController, bybitVM : BybitVM) {
