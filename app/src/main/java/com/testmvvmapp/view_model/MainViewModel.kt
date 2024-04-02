@@ -1,16 +1,14 @@
 package com.testmvvmapp.view_model
 
-import androidx.lifecycle.*
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.testmvvmapp.model.entities.MainInfo
-import com.testmvvmapp.model.service.util.ConnectionStatus
 import com.testmvvmapp.model.repository.IRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.*
+import com.testmvvmapp.model.service.util.ConnectionStatus
 import kotlinx.coroutines.flow.*
-import javax.inject.Inject
+import kotlinx.coroutines.launch
 
-@HiltViewModel
-class MainViewModel @Inject constructor(private val repository: IRepository) : ViewModel() {
+class MainViewModel(private val repository: IRepository) : ViewModel() {
     private val resultMSF = MutableStateFlow(ConnectionStatus.LOADING to emptyList<MainInfo>())
     val resultSF = resultMSF.asStateFlow()
     init {

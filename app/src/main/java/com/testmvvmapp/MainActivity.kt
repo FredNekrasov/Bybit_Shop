@@ -4,14 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.ui.Modifier
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
+import androidx.navigation.compose.*
 import com.testmvvmapp.ui.ScreenRoutes
 import com.testmvvmapp.ui.theme.TestMVVMAppTheme
 import com.testmvvmapp.view.Authorization
@@ -21,9 +17,7 @@ import com.testmvvmapp.view.list.FavouriteList
 import com.testmvvmapp.view.profile.Profile
 import com.testmvvmapp.view_model.MainViewModel
 import com.testmvvmapp.view_model.UserVM
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private val viewModel: MainViewModel by viewModels()
     private val userVM: UserVM by viewModels()

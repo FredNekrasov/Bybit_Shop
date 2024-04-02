@@ -1,15 +1,14 @@
 package com.testmvvmapp.view_model
 
-import androidx.lifecycle.*
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.testmvvmapp.model.entities.User
 import com.testmvvmapp.model.repository.UserRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class UserVM @Inject constructor(private val repository: UserRepository) : ViewModel() {
+class UserVM(private val repository: UserRepository) : ViewModel() {
     private val resultMSF = MutableStateFlow<Pair<Boolean,User?>>(false to null)
     val resultSF = resultMSF.asStateFlow()
     fun authorization(userName: String, password: String) {
