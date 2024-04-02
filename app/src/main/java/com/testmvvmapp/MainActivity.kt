@@ -7,15 +7,15 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.*
-import com.testmvvmapp.bybit.presentation.DataList
-import com.testmvvmapp.bybit.presentation.FavouriteList
-import com.testmvvmapp.bybit.presentation.viewModel.BybitVM
+import com.testmvvmapp.features.bybit.presentation.DataList
+import com.testmvvmapp.features.bybit.presentation.FavouriteList
+import com.testmvvmapp.features.bybit.presentation.viewModel.BybitVM
 import com.testmvvmapp.ui.ScreenRoutes
 import com.testmvvmapp.ui.theme.TestMVVMAppTheme
-import com.testmvvmapp.user.presentation.Authorization
-import com.testmvvmapp.user.presentation.Registration
-import com.testmvvmapp.user.presentation.profile.Profile
-import com.testmvvmapp.user.presentation.viewModel.UserVM
+import com.testmvvmapp.features.user.presentation.Authorization
+import com.testmvvmapp.features.user.presentation.Registration
+import com.testmvvmapp.features.user.presentation.profile.Profile
+import com.testmvvmapp.features.user.presentation.viewModel.UserVM
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 class MainActivity : ComponentActivity() {
