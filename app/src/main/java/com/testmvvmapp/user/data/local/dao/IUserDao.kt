@@ -1,7 +1,7 @@
-package com.testmvvmapp.model.local.dao
+package com.testmvvmapp.user.data.local.dao
 
 import androidx.room.*
-import com.testmvvmapp.model.entities.User
+import com.testmvvmapp.user.data.local.entity.User
 
 @Dao
 interface IUserDao {

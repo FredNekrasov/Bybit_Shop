@@ -10,13 +10,13 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.*
 import com.testmvvmapp.ui.ScreenRoutes
 import com.testmvvmapp.ui.theme.TestMVVMAppTheme
-import com.testmvvmapp.view.Authorization
-import com.testmvvmapp.view.Registration
+import com.testmvvmapp.user.presentation.Authorization
+import com.testmvvmapp.user.presentation.Registration
 import com.testmvvmapp.view.list.DataList
 import com.testmvvmapp.view.list.FavouriteList
-import com.testmvvmapp.view.profile.Profile
+import com.testmvvmapp.user.presentation.profile.Profile
 import com.testmvvmapp.viewModels.BybitVM
-import com.testmvvmapp.viewModels.UserVM
+import com.testmvvmapp.user.presentation.viewModel.UserVM
 
 class MainActivity : ComponentActivity() {
     private val bybitVM: BybitVM by viewModels()

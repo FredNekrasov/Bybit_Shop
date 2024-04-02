@@ -1,4 +1,4 @@
-package com.testmvvmapp.view.profile
+package com.testmvvmapp.user.presentation.profile
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
@@ -7,11 +7,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.testmvvmapp.R.string
-import com.testmvvmapp.model.entities.User
+import com.testmvvmapp.user.data.local.entity.User
 import com.testmvvmapp.ui.FredCardView
 
 @Composable
-fun UserInfo(user: User?,modifier: Modifier) {
+fun UserInfo(user: User?, modifier: Modifier) {
     if (user != null) {
         Box(modifier) {
             FredCardView(

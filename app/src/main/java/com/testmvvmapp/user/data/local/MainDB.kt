@@ -1,8 +1,8 @@
-package com.testmvvmapp.model.local
+package com.testmvvmapp.user.data.local
 
 import androidx.room.*
-import com.testmvvmapp.model.entities.User
-import com.testmvvmapp.model.local.dao.*
+import com.testmvvmapp.user.data.local.entity.User
+import com.testmvvmapp.user.data.local.dao.IUserDao
 
 @Database(entities = [User::class], version = 1, exportSchema = false)
 abstract class MainDB : RoomDatabase() {

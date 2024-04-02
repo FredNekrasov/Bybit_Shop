@@ -1,4 +1,4 @@
-package com.testmvvmapp.view
+package com.testmvvmapp.user.presentation
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.testmvvmapp.R
 import com.testmvvmapp.ui.*
-import com.testmvvmapp.viewModels.UserVM
+import com.testmvvmapp.user.presentation.viewModel.UserVM
 
 @Composable
 fun Authorization(controller: NavController, userVM: UserVM) {

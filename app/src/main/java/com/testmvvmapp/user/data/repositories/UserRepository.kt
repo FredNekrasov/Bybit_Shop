@@ -1,6 +1,6 @@
-package com.testmvvmapp.model.repository
+package com.testmvvmapp.user.data.repositories
 
-import com.testmvvmapp.model.entities.User
+import com.testmvvmapp.user.data.local.entity.User
 
 interface UserRepository {
     fun signUp(user: User): User?

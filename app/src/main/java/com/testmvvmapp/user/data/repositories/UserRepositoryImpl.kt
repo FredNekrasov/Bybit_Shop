@@ -1,7 +1,7 @@
-package com.testmvvmapp.model.repository
+package com.testmvvmapp.user.data.repositories
 
-import com.testmvvmapp.model.entities.User
-import com.testmvvmapp.model.local.dao.IUserDao
+import com.testmvvmapp.user.data.local.entity.User
+import com.testmvvmapp.user.data.local.dao.IUserDao
 
 class UserRepositoryImpl(private val dao: IUserDao) : UserRepository {
     override fun signUp(user: User): User? {

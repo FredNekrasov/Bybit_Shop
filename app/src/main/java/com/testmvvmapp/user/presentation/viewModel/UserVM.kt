@@ -1,15 +1,15 @@
-package com.testmvvmapp.viewModels
+package com.testmvvmapp.user.presentation.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.testmvvmapp.model.entities.User
-import com.testmvvmapp.model.repository.UserRepository
+import com.testmvvmapp.user.data.local.entity.User
+import com.testmvvmapp.user.data.repositories.UserRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class UserVM(private val repository: UserRepository) : ViewModel() {
-    private val resultMSF = MutableStateFlow<Pair<Boolean,User?>>(false to null)
+    private val resultMSF = MutableStateFlow<Pair<Boolean, User?>>(false to null)
     val resultSF = resultMSF.asStateFlow()
     fun authorization(userName: String, password: String) {
         viewModelScope.launch {

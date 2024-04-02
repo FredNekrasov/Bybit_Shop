@@ -1,4 +1,4 @@
-package com.testmvvmapp.view
+package com.testmvvmapp.user.presentation
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
@@ -12,9 +12,9 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.testmvvmapp.R.string
-import com.testmvvmapp.model.entities.User
+import com.testmvvmapp.user.data.local.entity.User
 import com.testmvvmapp.ui.*
-import com.testmvvmapp.viewModels.UserVM
+import com.testmvvmapp.user.presentation.viewModel.UserVM
 
 @Composable
 fun Registration(controller: NavHostController, userVM: UserVM) {
@@ -71,7 +71,9 @@ fun Registration(controller: NavHostController, userVM: UserVM) {
             isUserNameCorrect = userName.isBlank()
             isPasswordCorrect = password.isBlank() || password.length < 8
             isEmailCorrect = email.isBlank() || !email.contains("@")
-            if(!isEmailCorrect && !isUserNameCorrect && !isPasswordCorrect) userVM.registration(User(userName, password, email, name, surname))
+            if(!isEmailCorrect && !isUserNameCorrect && !isPasswordCorrect) userVM.registration(
+                User(userName, password, email, name, surname)
+            )
         },stringResource(string.signUp))
         Spacer(Modifier.height(8.dp))
         FredButton({ controller.navigate(ScreenRoutes.Authorization.route) }, stringResource(string.goBack))

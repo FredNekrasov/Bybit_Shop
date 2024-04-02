@@ -1,11 +1,13 @@
 package com.testmvvmapp.di
 
 import androidx.room.Room
-import com.testmvvmapp.model.local.MainDB
+import com.testmvvmapp.user.data.local.MainDB
 import com.testmvvmapp.model.repository.*
 import com.testmvvmapp.model.service.IBybitService
+import com.testmvvmapp.user.data.repositories.UserRepository
+import com.testmvvmapp.user.data.repositories.UserRepositoryImpl
 import com.testmvvmapp.viewModels.BybitVM
-import com.testmvvmapp.viewModels.UserVM
+import com.testmvvmapp.user.presentation.viewModel.UserVM
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit

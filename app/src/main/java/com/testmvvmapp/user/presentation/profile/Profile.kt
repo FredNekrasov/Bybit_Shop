@@ -1,4 +1,4 @@
-package com.testmvvmapp.view.profile
+package com.testmvvmapp.user.presentation.profile
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.*
@@ -8,7 +8,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.testmvvmapp.R.string
 import com.testmvvmapp.ui.*
-import com.testmvvmapp.viewModels.UserVM
+import com.testmvvmapp.user.presentation.viewModel.UserVM
 
 @Composable
 fun Profile(controller: NavHostController, userVM: UserVM) {

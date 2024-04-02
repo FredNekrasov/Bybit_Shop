@@ -1,4 +1,4 @@
-package com.testmvvmapp.model.entities
+package com.testmvvmapp.user.data.local.entity
 
 import androidx.room.*
 
