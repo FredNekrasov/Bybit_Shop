@@ -8,7 +8,7 @@ import com.testmvvmapp.model.service.util.ConnectionStatus
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
-class MainViewModel(private val repository: IBybitRepository) : ViewModel() {
+class BybitVM(private val repository: IBybitRepository) : ViewModel() {
     private val resultMSF = MutableStateFlow(ConnectionStatus.LOADING to emptyList<MainInfo>())
     val resultSF = resultMSF.asStateFlow()
     init {

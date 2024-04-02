@@ -9,10 +9,10 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.testmvvmapp.R
 import com.testmvvmapp.ui.*
-import com.testmvvmapp.view_model.MainViewModel
+import com.testmvvmapp.view_model.BybitVM
 
 @Composable
-fun FavouriteList(controller: NavHostController,viewModel: MainViewModel) {
+fun FavouriteList(controller: NavHostController,viewModel: BybitVM) {
     val state = viewModel.resultSF.collectAsState().value
     Box(Modifier.fillMaxSize()) {
         Column(Modifier.fillMaxSize(),Arrangement.Center,Alignment.CenterHorizontally) {

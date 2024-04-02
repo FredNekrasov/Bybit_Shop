@@ -15,11 +15,11 @@ import com.testmvvmapp.view.Registration
 import com.testmvvmapp.view.list.DataList
 import com.testmvvmapp.view.list.FavouriteList
 import com.testmvvmapp.view.profile.Profile
-import com.testmvvmapp.view_model.MainViewModel
+import com.testmvvmapp.view_model.BybitVM
 import com.testmvvmapp.view_model.UserVM
 
 class MainActivity : ComponentActivity() {
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: BybitVM by viewModels()
     private val userVM: UserVM by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -12,10 +12,10 @@ import androidx.navigation.NavHostController
 import com.testmvvmapp.R.string
 import com.testmvvmapp.model.service.util.ConnectionStatus
 import com.testmvvmapp.ui.*
-import com.testmvvmapp.view_model.MainViewModel
+import com.testmvvmapp.view_model.BybitVM
 
 @Composable
-fun DataList(controller: NavHostController,viewModel: MainViewModel) {
+fun DataList(controller: NavHostController,viewModel: BybitVM) {
     val state = viewModel.resultSF.collectAsState().value
     Box(Modifier.fillMaxSize()) {
         if (state.first == ConnectionStatus.LOADING) CircularProgressIndicator(Modifier.align(Alignment.Center))
