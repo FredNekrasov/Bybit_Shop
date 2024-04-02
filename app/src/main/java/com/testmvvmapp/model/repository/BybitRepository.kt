@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.*
 import retrofit2.HttpException
 import java.io.IOException
 
-class Repository(private val api: IBybitService) : IRepository {
+class BybitRepository(private val api: IBybitService) : IBybitRepository {
     override suspend fun getData(): StateFlow<Pair<ConnectionStatus,List<MainInfo>>> {
         val list = emptyList<MainInfo>()
         val data = MutableStateFlow(Pair(ConnectionStatus.LOADING,list))

@@ -3,12 +3,12 @@ package com.testmvvmapp.view_model
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.testmvvmapp.model.entities.MainInfo
-import com.testmvvmapp.model.repository.IRepository
+import com.testmvvmapp.model.repository.IBybitRepository
 import com.testmvvmapp.model.service.util.ConnectionStatus
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
-class MainViewModel(private val repository: IRepository) : ViewModel() {
+class MainViewModel(private val repository: IBybitRepository) : ViewModel() {
     private val resultMSF = MutableStateFlow(ConnectionStatus.LOADING to emptyList<MainInfo>())
     val resultSF = resultMSF.asStateFlow()
     init {
