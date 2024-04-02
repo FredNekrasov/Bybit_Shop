@@ -1,13 +1,13 @@
 package com.testmvvmapp.model.repository
 
 import com.testmvvmapp.model.entities.MainInfo
-import com.testmvvmapp.model.service.IService
+import com.testmvvmapp.model.service.IBybitService
 import com.testmvvmapp.model.service.util.ConnectionStatus
 import kotlinx.coroutines.flow.*
 import retrofit2.HttpException
 import java.io.IOException
 
-class Repository(private val api: IService) : IRepository {
+class Repository(private val api: IBybitService) : IRepository {
     override suspend fun getData(): StateFlow<Pair<ConnectionStatus,List<MainInfo>>> {
         val list = emptyList<MainInfo>()
         val data = MutableStateFlow(Pair(ConnectionStatus.LOADING,list))
