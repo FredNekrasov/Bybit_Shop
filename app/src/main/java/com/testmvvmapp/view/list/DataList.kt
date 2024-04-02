@@ -15,8 +15,8 @@ import com.testmvvmapp.ui.*
 import com.testmvvmapp.view_model.BybitVM
 
 @Composable
-fun DataList(controller: NavHostController,viewModel: BybitVM) {
-    val state = viewModel.resultSF.collectAsState().value
+fun DataList(controller : NavHostController, bybitVM : BybitVM) {
+    val state = bybitVM.resultSF.collectAsState().value
     Box(Modifier.fillMaxSize()) {
         if (state.first == ConnectionStatus.LOADING) CircularProgressIndicator(Modifier.align(Alignment.Center))
         Column(Modifier.fillMaxSize(),Arrangement.Center,Alignment.CenterHorizontally) {
@@ -34,7 +34,7 @@ fun DataList(controller: NavHostController,viewModel: BybitVM) {
                 item {
                     Row(Modifier.fillMaxWidth(),Arrangement.SpaceAround,Alignment.CenterVertically) {
                         FredButton({ controller.navigateUp() },stringResource(string.goBack))
-                        this@Box.ShowInternetInfo({ viewModel.getData() },state.first)
+                        this@Box.ShowInternetInfo({ bybitVM.getData() }, state.first)
                         FredButton({ controller.navigate(ScreenRoutes.Favorites.route) }, stringResource(string.favourites))
                     }
                     Spacer(Modifier.height(16.dp))

@@ -17,7 +17,7 @@ import com.testmvvmapp.ui.*
 import com.testmvvmapp.view_model.UserVM
 
 @Composable
-fun Registration(controller: NavHostController,userVM: UserVM) {
+fun Registration(controller: NavHostController, userVM: UserVM) {
     val userData = userVM.resultSF.collectAsState().value
     var userName by rememberSaveable { mutableStateOf("") }
     var password by rememberSaveable { mutableStateOf("") }

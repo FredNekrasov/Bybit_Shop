@@ -11,7 +11,7 @@ import com.testmvvmapp.ui.*
 import com.testmvvmapp.view_model.UserVM
 
 @Composable
-fun Profile(controller: NavHostController,userVM: UserVM) {
+fun Profile(controller: NavHostController, userVM: UserVM) {
     val user = userVM.resultSF.collectAsState().value.second
     Column(Modifier.fillMaxSize(),Arrangement.Top,Alignment.CenterHorizontally) {
         FredTextHeader(stringResource(string.profile))

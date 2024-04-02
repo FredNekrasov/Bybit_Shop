@@ -14,7 +14,11 @@ import com.testmvvmapp.ui.FredCardView
 fun UserInfo(user: User?,modifier: Modifier) {
     if (user != null) {
         Box(modifier) {
-            FredCardView(Modifier.matchParentSize(),MaterialTheme.colorScheme.tertiaryContainer,MaterialTheme.colorScheme.onTertiaryContainer)
+            FredCardView(
+                Modifier.matchParentSize(),
+                MaterialTheme.colorScheme.tertiaryContainer,
+                MaterialTheme.colorScheme.onTertiaryContainer
+            )
             Column(modifier.padding(16.dp)) {
                 Text("${stringResource(string.userName)}: ${user.userName}", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onTertiaryContainer)
                 Spacer(Modifier.height(8.dp))

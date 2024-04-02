@@ -12,8 +12,8 @@ import com.testmvvmapp.ui.*
 import com.testmvvmapp.view_model.BybitVM
 
 @Composable
-fun FavouriteList(controller: NavHostController,viewModel: BybitVM) {
-    val state = viewModel.resultSF.collectAsState().value
+fun FavouriteList(controller: NavHostController, bybitVM: BybitVM) {
+    val state = bybitVM.resultSF.collectAsState().value
     Box(Modifier.fillMaxSize()) {
         Column(Modifier.fillMaxSize(),Arrangement.Center,Alignment.CenterHorizontally) {
             FredTextHeader(stringResource(R.string.favourites))

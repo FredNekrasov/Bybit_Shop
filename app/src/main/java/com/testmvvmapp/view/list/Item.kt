@@ -10,9 +10,18 @@ import com.testmvvmapp.model.entities.MainInfo
 import com.testmvvmapp.ui.*
 
 @Composable
-fun Item(data: MainInfo, isFavorite: Boolean, onFavouriteChange: (Boolean) -> Unit, modifier: Modifier = Modifier) {
+fun Item(
+    data : MainInfo,
+    isFavorite : Boolean,
+    onFavouriteChange : (Boolean) -> Unit,
+    modifier : Modifier = Modifier
+) {
     Box(modifier) {
-        FredCardView(Modifier.matchParentSize(), MaterialTheme.colorScheme.errorContainer, MaterialTheme.colorScheme.onErrorContainer)
+        FredCardView(
+            Modifier.matchParentSize(),
+            MaterialTheme.colorScheme.errorContainer,
+            MaterialTheme.colorScheme.onErrorContainer
+        )
         Column(Modifier.fillMaxSize().padding(16.dp)) {
             FredText(data.title, MaterialTheme.typography.titleMedium)
             Spacer(modifier = Modifier.height(8.dp))
